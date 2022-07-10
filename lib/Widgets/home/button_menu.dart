@@ -6,20 +6,20 @@ class ButtonMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(10),
-      child: Row(
-        children: [
-          ElevatedButton(onPressed: () {}, child: Text('HOME')),
-          SizedBox(
-            width: 10,
-          ),
-          ElevatedButton(onPressed: () {}, child: Text('FERRAMENTAS')),
-          SizedBox(
-            width: 10,
-          ),
-          ElevatedButton(onPressed: () {}, child: Text('NOTIFICAÇÕES')),
-        ],
-      ),
-    );
+        padding: const EdgeInsets.all(10),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(onPressed: () {}, child: Text('HOME')),
+            SizedBox(
+              width: 10,
+            ),
+            ElevatedButton(onPressed: () {}, child: Text('FERRAMENTAS')),
+            SizedBox(
+              width: 10,
+            ),
+            ElevatedButton(onPressed: () {}, child: Text('NOTIFICAÇÕES')),
+          ],
+        ));
   }
 }

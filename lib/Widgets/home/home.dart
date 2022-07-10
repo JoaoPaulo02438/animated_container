@@ -1,6 +1,7 @@
 import 'package:animated_container/Widgets/home/button_menu.dart';
 import 'package:animated_container/Widgets/home/gesturePri.dart';
 import 'package:animated_container/Widgets/home/gestureRec.dart';
+
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -12,6 +13,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   bool select = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +26,7 @@ class _HomeState extends State<Home> {
               children: [
                 ButtonMenu(),
               ],
-            )
+            ),
           ],
         ),
       ),
@@ -32,7 +34,7 @@ class _HomeState extends State<Home> {
   }
 
   Widget GesturePrincipal() {
-    return GestureDetector(
+    return InkWell(
       onTap: () {
         setState(() {
           select = !select;
@@ -45,7 +47,7 @@ class _HomeState extends State<Home> {
                 color: Color.fromARGB(255, 143, 5, 12),
                 borderRadius: BorderRadius.circular(20)),
             alignment: Alignment.topCenter,
-            duration: Duration(seconds: 1),
+            duration: Duration(milliseconds: 800),
             height: MediaQuery.of(context).size.height / 0.9,
             width: MediaQuery.of(context).size.height / 2.5,
             child: GesturePri()),
@@ -54,23 +56,27 @@ class _HomeState extends State<Home> {
   }
 
   Widget GestureRecolhido() {
-    return GestureDetector(
+    return InkWell(
       onTap: () {
         setState(() {
           select = !select;
         });
       },
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: AnimatedContainer(
-            decoration: BoxDecoration(
-                color: Color.fromARGB(255, 143, 5, 12),
-                borderRadius: BorderRadius.circular(20)),
-            alignment: Alignment.topLeft,
-            duration: Duration(seconds: 1),
-            height: MediaQuery.of(context).size.height / 0.4,
-            width: MediaQuery.of(context).size.height / 10.0,
-            child: GestureRec(select: true)),
+      child: Wrap(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: AnimatedContainer(
+                decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 143, 5, 12),
+                    borderRadius: BorderRadius.circular(20)),
+                alignment: Alignment.topLeft,
+                duration: Duration(milliseconds: 1),
+                height: MediaQuery.of(context).size.height / 0.4,
+                width: MediaQuery.of(context).size.height / 10.0,
+                child: GestureRec()),
+          ),
+        ],
       ),
     );
   }

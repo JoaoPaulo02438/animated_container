@@ -1,4 +1,4 @@
-import 'package:animated_container/home.dart';
+import 'package:animated_container/Widgets/home/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
