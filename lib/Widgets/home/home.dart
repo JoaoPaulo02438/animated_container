@@ -1,6 +1,10 @@
-import 'package:animated_container/Widgets/home/button_menu.dart';
+import 'package:animated_container/Widgets/home/avisos_home.dart';
+import 'package:animated_container/Widgets/home/button_home.dart';
 import 'package:animated_container/Widgets/home/gesturePri.dart';
 import 'package:animated_container/Widgets/home/gestureRec.dart';
+import 'package:animated_container/Widgets/home/graficos_home.dart';
+
+import 'package:animated_container/Widgets/home/status_home.dart';
 
 import 'package:flutter/material.dart';
 
@@ -24,7 +28,13 @@ class _HomeState extends State<Home> {
             select ? GesturePrincipal() : GestureRecolhido(),
             Column(
               children: [
-                ButtonMenu(),
+                ButtonHome(),
+                SizedBox(height: 50),
+                StatusHome(),
+                SizedBox(height: 50),
+                GraficosHome(),
+                SizedBox(height: 50),
+                AvisosHome(),
               ],
             ),
           ],
@@ -44,7 +54,7 @@ class _HomeState extends State<Home> {
         padding: const EdgeInsets.all(8.0),
         child: AnimatedContainer(
             decoration: BoxDecoration(
-                color: Color.fromARGB(255, 143, 5, 12),
+                color: const Color(0xffD52B1E),
                 borderRadius: BorderRadius.circular(20)),
             alignment: Alignment.topCenter,
             duration: Duration(milliseconds: 800),
@@ -68,11 +78,11 @@ class _HomeState extends State<Home> {
             padding: const EdgeInsets.all(8.0),
             child: AnimatedContainer(
                 decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 143, 5, 12),
+                    color: const Color(0xffD52B1E),
                     borderRadius: BorderRadius.circular(20)),
                 alignment: Alignment.topLeft,
                 duration: Duration(milliseconds: 1),
-                height: MediaQuery.of(context).size.height / 0.4,
+                height: MediaQuery.of(context).size.height / 0.5,
                 width: MediaQuery.of(context).size.height / 10.0,
                 child: GestureRec()),
           ),

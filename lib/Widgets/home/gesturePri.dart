@@ -108,7 +108,7 @@ class GesturePri extends StatelessWidget {
             itemBuilder: (context, index) {
               return Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
+                  borderRadius: BorderRadius.circular(10),
                   color: Colors.white,
                 ),
                 child: Text("serviço: $index"),

@@ -43,10 +43,7 @@ class GestureRec extends StatelessWidget {
             ],
           ),
         ),
-        Divider(
-          height: 5,
-          color: Colors.white,
-        ),
+
         //MICROSERVIÇOS
         Padding(
           padding: const EdgeInsets.all(8.0),
@@ -105,10 +102,7 @@ class GestureRec extends StatelessWidget {
             },
           ),
         ),
-        Divider(
-          height: 30,
-          color: Colors.white,
-        ),
+
         //INFERIOR
         Padding(
           padding: const EdgeInsets.all(8.0),
