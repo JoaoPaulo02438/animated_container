@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
 
 class GestureRec extends StatelessWidget {
-  const GestureRec({Key? key}) : super(key: key);
+  GestureRec({Key? key}) : super(key: key);
+
+  List<String> images = [
+    "images/ibase_de_dados.png",
+    "images/ijornada.png",
+    "images/itrajetos.png",
+    "images/iestoque.png",
+    "images/ipesquisa.png",
+    "images/itarefas.png",
+    "images/itrajetos.png",
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -91,13 +101,14 @@ class GestureRec extends StatelessWidget {
             itemCount: 5,
             itemBuilder: (context, index) {
               return Container(
+                padding: EdgeInsets.only(left: 0, top: 5, right: 0, bottom: 5),
                 width: 50,
                 height: 10,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
+                  borderRadius: BorderRadius.circular(10),
                   color: Colors.white,
                 ),
-                child: Text("serviço: $index"),
+                child: Image.asset(images[index]),
               );
             },
           ),
@@ -117,10 +128,11 @@ class GestureRec extends StatelessWidget {
             itemCount: 2,
             itemBuilder: (context, index) {
               return Container(
+                padding: EdgeInsets.only(left: 0, top: 5, right: 0, bottom: 5),
                 //width: MediaQuery.of(context).size.width * 10,
                 //height: MediaQuery.of(context).size.height * .10,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
+                  borderRadius: BorderRadius.circular(10),
                   color: Colors.white,
                 ),
                 child: Text("inferior: $index"),

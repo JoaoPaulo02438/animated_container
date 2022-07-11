@@ -2,16 +2,25 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class GesturePri extends StatelessWidget {
-  const GesturePri({
+  GesturePri({
     Key? key,
   }) : super(key: key);
+
+  List<String> images = [
+    "images/base_de_dados.png",
+    "images/jornada.png",
+    "images/trajetos.png",
+    "images/estoque.png",
+    "images/pesquisa.png",
+    "images/tarefas.png",
+    "images/trajetos.png",
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         //lOGO
-
         Padding(
           padding: const EdgeInsets.all(12.0),
           child: Row(
@@ -105,13 +114,14 @@ class GesturePri extends StatelessWidget {
               mainAxisSpacing: 3.0,
             ),
             itemCount: 7,
-            itemBuilder: (context, index) {
+            itemBuilder: (context, int index) {
               return Container(
+                padding: EdgeInsets.only(left: 0, top: 5, right: 0, bottom: 5),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: Colors.white,
                 ),
-                child: Text("serviço: $index"),
+                child: Image.asset(images[index]),
               );
             },
           ),
@@ -121,25 +131,49 @@ class GesturePri extends StatelessWidget {
         ),
         //GRID INFERIOR
         Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: GridView.builder(
-            //physics: NeverScrollableScrollPhysics(),
-            shrinkWrap: true,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 3,
-              crossAxisSpacing: 4.0,
-              mainAxisSpacing: 3.0,
-            ),
-            itemCount: 3,
-            itemBuilder: (context, index) {
-              return Container(
+          padding: const EdgeInsets.all(1),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                alignment: Alignment.bottomCenter,
+                child: Text(
+                  'tools v.012022',
+                  style: TextStyle(fontSize: 10),
+                ),
+                width: 80,
+                height: 80,
+                padding: EdgeInsets.only(left: 0, top: 5, right: 0, bottom: 5),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
+                  borderRadius: BorderRadius.circular(10),
                   color: Colors.white,
                 ),
-                child: Text("inferior: $index"),
-              );
-            },
+              ),
+              Container(
+                width: 80,
+                height: 80,
+                padding: EdgeInsets.only(left: 0, top: 5, right: 0, bottom: 5),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.white,
+                  image: DecorationImage(
+                      image: AssetImage('images/itarefas.png'),
+                      fit: BoxFit.fitWidth),
+                ),
+              ),
+              Container(
+                width: 80,
+                height: 80,
+                padding: EdgeInsets.only(left: 0, top: 5, right: 0, bottom: 5),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.white,
+                  image: DecorationImage(
+                      image: AssetImage('images/itarefas.png'),
+                      fit: BoxFit.fitWidth),
+                ),
+              ),
+            ],
           ),
         ),
       ],
