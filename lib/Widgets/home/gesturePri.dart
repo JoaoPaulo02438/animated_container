@@ -1,3 +1,4 @@
+import 'package:animated_container/Widgets/widget_text_form_field.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -38,13 +39,11 @@ class GesturePri extends StatelessWidget {
                         fit: BoxFit.fitWidth)),
               ),
               CircleAvatar(
+                backgroundColor: Colors.white,
+                backgroundImage: NetworkImage(
+                    'https://www.woolha.com/media/2020/03/eevee.png'),
                 radius: 25,
-                child: Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      color: Colors.white),
-                ),
-              )
+              ),
             ],
           ),
         ),
@@ -60,7 +59,7 @@ class GesturePri extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(5),
+                  borderRadius: BorderRadius.circular(25),
                 ),
                 height: MediaQuery.of(context).size.height * .05,
                 width: MediaQuery.of(context).size.width * .18,
@@ -115,62 +114,73 @@ class GesturePri extends StatelessWidget {
             ),
             itemCount: 7,
             itemBuilder: (context, int index) {
-              return Container(
-                padding: EdgeInsets.only(left: 0, top: 5, right: 0, bottom: 5),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.white,
+              return InkWell(
+                onTap: () {},
+                child: Container(
+                  padding:
+                      EdgeInsets.only(left: 0, top: 5, right: 0, bottom: 5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                  ),
+                  child: Image.asset(images[index]),
                 ),
-                child: Image.asset(images[index]),
               );
             },
           ),
         ),
         SizedBox(
-          height: 30,
+          height: 80,
         ),
         //GRID INFERIOR
         Padding(
-          padding: const EdgeInsets.all(1),
+          padding: const EdgeInsets.all(8.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Container(
-                alignment: Alignment.bottomCenter,
-                child: Text(
-                  'tools v.012022',
-                  style: TextStyle(fontSize: 10),
-                ),
-                width: 80,
-                height: 80,
-                padding: EdgeInsets.only(left: 0, top: 5, right: 0, bottom: 5),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.white,
-                ),
-              ),
-              Container(
-                width: 80,
-                height: 80,
-                padding: EdgeInsets.only(left: 0, top: 5, right: 0, bottom: 5),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.white,
-                  image: DecorationImage(
-                      image: AssetImage('images/itarefas.png'),
-                      fit: BoxFit.fitWidth),
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  padding: EdgeInsets.only(top: 10),
+                  width: MediaQuery.of(context).size.width * .06,
+                  height: MediaQuery.of(context).size.height * .06,
+                  decoration: BoxDecoration(
+                    color: const Color(0xffD52B1E),
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Flexible(
+                      child: Text(
+                    'tools v 01.2022 by redeinova',
+                    style: TextStyle(color: Colors.white, fontSize: 10),
+                  )),
                 ),
               ),
-              Container(
-                width: 80,
-                height: 80,
-                padding: EdgeInsets.only(left: 0, top: 5, right: 0, bottom: 5),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Colors.white,
-                  image: DecorationImage(
-                      image: AssetImage('images/itarefas.png'),
-                      fit: BoxFit.fitWidth),
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  width: MediaQuery.of(context).size.width * .06,
+                  height: MediaQuery.of(context).size.height * .06,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(5),
+                    image: DecorationImage(
+                        image: AssetImage('images/suporte.png'),
+                        fit: BoxFit.fitWidth),
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  width: MediaQuery.of(context).size.width * .06,
+                  height: MediaQuery.of(context).size.height * .06,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(5),
+                    image: DecorationImage(
+                        image: AssetImage('images/sair.png'),
+                        fit: BoxFit.fitWidth),
+                  ),
                 ),
               ),
             ],

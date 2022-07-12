@@ -83,7 +83,7 @@ class _HomeState extends State<Home> {
                 alignment: Alignment.topLeft,
                 duration: Duration(milliseconds: 1),
                 height: MediaQuery.of(context).size.height / 0.5,
-                width: MediaQuery.of(context).size.height / 10.0,
+                width: MediaQuery.of(context).size.height / 9.5,
                 child: GestureRec()),
           ),
         ],
