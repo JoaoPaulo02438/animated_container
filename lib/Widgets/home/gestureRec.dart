@@ -12,17 +12,19 @@ class GestureRec extends StatelessWidget {
     "images/itarefas.png",
     "images/itrajetos.png",
     "images/iavisos.png",
+    "imagens/isuporte.png",
+    "imagens/isair.png",
   ];
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return ListView(
       children: [
         //lOGO
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
                 width: 50,
@@ -57,38 +59,42 @@ class GestureRec extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(25),
-                ),
-                width: 52,
-                height: 42,
-                //margin: EdgeInsets.symmetric(horizontal: 4.0, vertical: 60.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                      enabledBorder: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                      hintStyle: TextStyle(color: Colors.grey),
-                      suffixIcon: Center(
-                        child: Icon(
-                          Icons.search,
-                          size: 20.0,
-                          color: Colors.grey,
-                          textDirection: TextDirection.rtl,
-                        ),
-                      )),
-                  textDirection: TextDirection.rtl,
-                  textAlign: TextAlign.left,
-                  style: TextStyle(fontSize: 15, color: Colors.black),
+              Flexible(
+                child: Container(
+                  padding:
+                      EdgeInsets.only(left: 0, top: 5, right: 0, bottom: 5),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                  width: 60,
+                  height: 50,
+                  //margin: EdgeInsets.symmetric(horizontal: 4.0, vertical: 60.0),
+                  child: TextField(
+                    decoration: InputDecoration(
+                        enabledBorder: InputBorder.none,
+                        focusedBorder: InputBorder.none,
+                        hintStyle: TextStyle(color: Colors.grey),
+                        suffixIcon: Center(
+                          child: Icon(
+                            Icons.search,
+                            size: 20.0,
+                            color: Colors.grey,
+                          ),
+                        )),
+                    textDirection: TextDirection.rtl,
+                    textAlign: TextAlign.left,
+                    style: TextStyle(fontSize: 15, color: Colors.black),
+                  ),
                 ),
               ),
             ],
           ),
         ),
-        SizedBox(height: 5),
+
         //GRID ICONES SERVIÇOS
         Padding(
           padding: const EdgeInsets.all(8.0),
@@ -119,50 +125,72 @@ class GestureRec extends StatelessWidget {
             },
           ),
         ),
+
         SizedBox(
-          height: 20,
+          height: 10,
         ),
         //INFERIOR
         Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: [
-                InkWell(
+          padding: const EdgeInsets.all(8.0),
+          child: GridView.builder(
+            //physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 1,
+              crossAxisSpacing: 2.0,
+              mainAxisSpacing: 1.0,
+            ),
+            itemCount: 1,
+            itemBuilder: (context, index) {
+              return InkWell(
                   onTap: () {},
                   child: Container(
+                    padding:
+                        EdgeInsets.only(left: 0, top: 5, right: 0, bottom: 5),
                     width: MediaQuery.of(context).size.width * .04,
-                    height: MediaQuery.of(context).size.height * .07,
+                    height: MediaQuery.of(context).size.height * .05,
                     decoration: BoxDecoration(
-                      color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
-                      image: DecorationImage(
-                          image: AssetImage('images/isuporte.png'),
-                          fit: BoxFit.fitWidth),
+                      color: Colors.white,
                     ),
-                  ),
-                ),
-              ],
-            )),
+                    child: Image(
+                      image: AssetImage('images/isuporte.png'),
+                    ),
+                  ));
+            },
+          ),
+        ),
+
         Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: [
-                InkWell(
+          padding: const EdgeInsets.all(8.0),
+          child: GridView.builder(
+            //physics: NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 1,
+              crossAxisSpacing: 2.0,
+              mainAxisSpacing: 1.0,
+            ),
+            itemCount: 1,
+            itemBuilder: (context, index) {
+              return InkWell(
                   onTap: () {},
                   child: Container(
+                    padding:
+                        EdgeInsets.only(left: 0, top: 5, right: 0, bottom: 5),
                     width: MediaQuery.of(context).size.width * .04,
-                    height: MediaQuery.of(context).size.height * .07,
+                    height: MediaQuery.of(context).size.height * .05,
                     decoration: BoxDecoration(
-                      color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
-                      image: DecorationImage(
-                          image: AssetImage('images/isair.png'),
-                          fit: BoxFit.fitWidth),
+                      color: Colors.white,
                     ),
-                  ),
-                ),
-              ],
-            )),
+                    child: Image(
+                      image: AssetImage('images/sair.png'),
+                    ),
+                  ));
+            },
+          ),
+        ),
       ],
     );
   }

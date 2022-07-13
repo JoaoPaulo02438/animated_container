@@ -44,37 +44,39 @@ class _HomeState extends State<Home> {
   }
 
   Widget GesturePrincipal() {
-    return InkWell(
-      onTap: () {
-        setState(() {
-          select = !select;
-        });
-      },
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: AnimatedContainer(
-            decoration: BoxDecoration(
-                color: const Color(0xffD52B1E),
-                borderRadius: BorderRadius.circular(20)),
-            alignment: Alignment.topCenter,
-            duration: Duration(milliseconds: 800),
-            height: MediaQuery.of(context).size.height / 0.9,
-            width: MediaQuery.of(context).size.height / 2.5,
-            child: GesturePri()),
+    return Flexible(
+      child: InkWell(
+        onTap: () {
+          setState(() {
+            select = !select;
+          });
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: AnimatedContainer(
+              decoration: BoxDecoration(
+                  color: const Color(0xffD52B1E),
+                  borderRadius: BorderRadius.circular(20)),
+              alignment: Alignment.topCenter,
+              duration: Duration(milliseconds: 1),
+              height: MediaQuery.of(context).size.height / 0.9,
+              width: MediaQuery.of(context).size.height / 2.5,
+              child: GesturePri()),
+        ),
       ),
     );
   }
 
   Widget GestureRecolhido() {
-    return InkWell(
-      onTap: () {
-        setState(() {
-          select = !select;
-        });
-      },
-      child: Wrap(
-        children: [
-          Padding(
+    return Flexible(
+      child: InkWell(
+        onTap: () {
+          setState(() {
+            select = !select;
+          });
+        },
+        child: Container(
+          child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: AnimatedContainer(
                 decoration: BoxDecoration(
@@ -83,10 +85,10 @@ class _HomeState extends State<Home> {
                 alignment: Alignment.topLeft,
                 duration: Duration(milliseconds: 1),
                 height: MediaQuery.of(context).size.height / 0.5,
-                width: MediaQuery.of(context).size.height / 9.5,
+                width: MediaQuery.of(context).size.height / 9,
                 child: GestureRec()),
           ),
-        ],
+        ),
       ),
     );
   }

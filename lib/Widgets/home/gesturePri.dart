@@ -1,4 +1,3 @@
-import 'package:animated_container/Widgets/widget_text_form_field.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +13,7 @@ class GesturePri extends StatelessWidget {
     "images/estoque.png",
     "images/pesquisa.png",
     "images/tarefas.png",
-    "images/trajetos.png",
+    "images/avisos.png",
   ];
 
   @override
@@ -27,22 +26,26 @@ class GesturePri extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Container(
-                padding: EdgeInsets.all(20),
-                width: 130,
-                height: 50,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5),
-                    color: Colors.white,
-                    image: DecorationImage(
-                        image: AssetImage('images/claro_tools.png'),
-                        fit: BoxFit.fitWidth)),
+              Flexible(
+                child: Container(
+                  padding: EdgeInsets.all(20),
+                  width: 130,
+                  height: 50,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      color: Colors.white,
+                      image: DecorationImage(
+                          image: AssetImage('images/claro_tools.png'),
+                          fit: BoxFit.fitWidth)),
+                ),
               ),
-              CircleAvatar(
-                backgroundColor: Colors.white,
-                backgroundImage: NetworkImage(
-                    'https://www.woolha.com/media/2020/03/eevee.png'),
-                radius: 25,
+              Flexible(
+                child: CircleAvatar(
+                  backgroundColor: Colors.white,
+                  backgroundImage: NetworkImage(
+                      'https://www.woolha.com/media/2020/03/eevee.png'),
+                  radius: 25,
+                ),
               ),
             ],
           ),
@@ -56,31 +59,33 @@ class GesturePri extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(25),
-                ),
-                height: MediaQuery.of(context).size.height * .05,
-                width: MediaQuery.of(context).size.width * .18,
-                //margin: EdgeInsets.symmetric(horizontal: 4.0, vertical: 60.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                      hintText: 'Pesquisar',
-                      border: InputBorder.none,
-                      enabledBorder: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                      hintStyle: TextStyle(color: Colors.grey),
-                      contentPadding: EdgeInsets.symmetric(
-                          horizontal: 10.0, vertical: 14.0),
-                      suffixIcon: Icon(
-                        Icons.search,
-                        size: 12.0,
-                        color: Colors.grey,
-                      )),
-                  textDirection: TextDirection.rtl,
-                  textAlign: TextAlign.left,
-                  style: TextStyle(fontSize: 15, color: Colors.black),
+              Flexible(
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                  height: 40,
+                  width: 250,
+                  //margin: EdgeInsets.symmetric(horizontal: 4.0, vertical: 60.0),
+                  child: TextField(
+                    decoration: InputDecoration(
+                        hintText: 'Pesquisar',
+                        border: InputBorder.none,
+                        enabledBorder: InputBorder.none,
+                        focusedBorder: InputBorder.none,
+                        hintStyle: TextStyle(color: Colors.grey),
+                        contentPadding: EdgeInsets.symmetric(
+                            horizontal: 10.0, vertical: 14.0),
+                        suffixIcon: Icon(
+                          Icons.search,
+                          size: 12.0,
+                          color: Colors.grey,
+                        )),
+                    textDirection: TextDirection.rtl,
+                    textAlign: TextAlign.left,
+                    style: TextStyle(fontSize: 15, color: Colors.black),
+                  ),
                 ),
               ),
             ],
@@ -130,7 +135,7 @@ class GesturePri extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 80,
+          height: 50,
         ),
         //GRID INFERIOR
         Padding(
@@ -138,48 +143,55 @@ class GesturePri extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              InkWell(
-                onTap: () {},
-                child: Container(
-                  padding: EdgeInsets.only(top: 10),
-                  width: MediaQuery.of(context).size.width * .06,
-                  height: MediaQuery.of(context).size.height * .06,
-                  decoration: BoxDecoration(
-                    color: const Color(0xffD52B1E),
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  child: Flexible(
+              Flexible(
+                child: InkWell(
+                  onTap: () {},
+                  child: Container(
+                    padding: EdgeInsets.only(top: 10),
+                    width: 75,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: const Color(0xffD52B1E),
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Flexible(
                       child: Text(
-                    'tools v 01.2022 by redeinova',
-                    style: TextStyle(color: Colors.white, fontSize: 10),
-                  )),
-                ),
-              ),
-              InkWell(
-                onTap: () {},
-                child: Container(
-                  width: MediaQuery.of(context).size.width * .06,
-                  height: MediaQuery.of(context).size.height * .06,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(5),
-                    image: DecorationImage(
-                        image: AssetImage('images/suporte.png'),
-                        fit: BoxFit.fitWidth),
+                        'tools v 01.2022 by redeinova',
+                        style: TextStyle(color: Colors.white, fontSize: 10),
+                      ),
+                    ),
                   ),
                 ),
               ),
-              InkWell(
-                onTap: () {},
-                child: Container(
-                  width: MediaQuery.of(context).size.width * .06,
-                  height: MediaQuery.of(context).size.height * .06,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(5),
-                    image: DecorationImage(
-                        image: AssetImage('images/sair.png'),
-                        fit: BoxFit.fitWidth),
+              Flexible(
+                child: InkWell(
+                  onTap: () {},
+                  child: Container(
+                    width: 75,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(5),
+                      image: DecorationImage(
+                          image: AssetImage('images/suporte.png'),
+                          fit: BoxFit.fitWidth),
+                    ),
+                  ),
+                ),
+              ),
+              Flexible(
+                child: InkWell(
+                  onTap: () {},
+                  child: Container(
+                    width: 75,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(5),
+                      image: DecorationImage(
+                          image: AssetImage('images/sair.png'),
+                          fit: BoxFit.fitWidth),
+                    ),
                   ),
                 ),
               ),
