@@ -1,10 +1,9 @@
-import 'package:animated_container/Widgets/home/avisos_home.dart';
-import 'package:animated_container/Widgets/home/button_home.dart';
-import 'package:animated_container/Widgets/home/gesturePri.dart';
-import 'package:animated_container/Widgets/home/gestureRec.dart';
-import 'package:animated_container/Widgets/home/graficos_home.dart';
-
-import 'package:animated_container/Widgets/home/status_home.dart';
+import 'package:animated_container/components/home/avisos_home.dart';
+import 'package:animated_container/components/home/button_home.dart';
+import 'package:animated_container/components/home/gesturePri.dart';
+import 'package:animated_container/components/home/gestureRec.dart';
+import 'package:animated_container/components/home/graficos_home.dart';
+import 'package:animated_container/components/home/status_home.dart';
 
 import 'package:flutter/material.dart';
 

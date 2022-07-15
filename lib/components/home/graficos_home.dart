@@ -11,7 +11,7 @@ class GraficosHome extends StatelessWidget {
           children: [
             Container(
               child: IconButton(
-                alignment: Alignment.centerLeft,
+                alignment: Alignment.bottomRight,
                 icon: Icon(
                   Icons.more_horiz,
                 ),

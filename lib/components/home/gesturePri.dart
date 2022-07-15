@@ -53,6 +53,7 @@ class GesturePri extends StatelessWidget {
         SizedBox(
           height: 40,
         ),
+
         //BOTÃO PESQUISAR
         Padding(
           padding: const EdgeInsets.all(12.0),
@@ -92,6 +93,7 @@ class GesturePri extends StatelessWidget {
           ),
         ),
         SizedBox(height: 10),
+
         //MICROSERVIÇOS
         Padding(
           padding: const EdgeInsets.all(16),
@@ -106,6 +108,7 @@ class GesturePri extends StatelessWidget {
           ),
         ),
         SizedBox(height: 5),
+
         //GRID ICONES SERVIÇOS
         Padding(
           padding: const EdgeInsets.all(8.0),
@@ -137,6 +140,7 @@ class GesturePri extends StatelessWidget {
         SizedBox(
           height: 50,
         ),
+
         //GRID INFERIOR
         Padding(
           padding: const EdgeInsets.all(8.0),
