@@ -1,9 +1,9 @@
-import 'package:animated_container/components/home/avisos_home.dart';
-import 'package:animated_container/components/home/button_home.dart';
-import 'package:animated_container/components/home/gesturePri.dart';
-import 'package:animated_container/components/home/gestureRec.dart';
-import 'package:animated_container/components/home/graficos_home.dart';
-import 'package:animated_container/components/home/status_home.dart';
+import 'package:animated_container/Components/home/notifications/notifications_home.dart';
+import 'package:animated_container/Components/home/upper/team_home.dart';
+import 'package:animated_container/Components/home/upper/upper_home.dart';
+import 'package:animated_container/components/home/menu/gesturePri.dart';
+import 'package:animated_container/components/home/menu/gestureRec.dart';
+import 'package:animated_container/components/home/dashboards/dashboard_home.dart';
 
 import 'package:flutter/material.dart';
 
@@ -20,20 +20,20 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey,
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Row(
           children: [
             select ? GesturePrincipal() : GestureRecolhido(),
             Column(
               children: [
-                ButtonHome(),
+                UpperHome(),
                 SizedBox(height: 50),
-                StatusHome(),
+                TeamHome(),
                 SizedBox(height: 50),
-                GraficosHome(),
+                DashboardHome(),
                 SizedBox(height: 50),
-                AvisosHome(),
+                NotificationHome(),
               ],
             ),
           ],

@@ -1,7 +1,8 @@
+import 'package:animated_container/components/home/dashboards/dash_widget.dart';
 import 'package:flutter/material.dart';
 
-class AvisosHome extends StatelessWidget {
-  const AvisosHome({Key? key}) : super(key: key);
+class DashboardHome extends StatelessWidget {
+  const DashboardHome({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -9,9 +10,12 @@ class AvisosHome extends StatelessWidget {
       children: [
         Row(
           children: [
-            Container(
-              child: IconButton(
-                alignment: Alignment.centerLeft,
+            DashWidget(),
+            SizedBox(width: 15),
+
+            /*Container(
+              IconButton(
+                alignment: Alignment.bottomRight,
                 icon: Icon(
                   Icons.more_horiz,
                 ),
@@ -31,8 +35,8 @@ class AvisosHome extends StatelessWidget {
                 ],
                 borderRadius: BorderRadius.circular(10),
               ),
-            ),
-            SizedBox(width: 10),
+            ),*/
+            SizedBox(width: 15),
             Container(
               //padding: EdgeInsets.only(left: 180, top: 150),
               child: IconButton(
@@ -57,7 +61,7 @@ class AvisosHome extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
-            SizedBox(width: 10),
+            SizedBox(width: 15),
             Container(
               //padding: EdgeInsets.only(left: 180, top: 150),
               child: IconButton(

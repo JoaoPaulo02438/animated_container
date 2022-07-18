@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class StatusHome extends StatelessWidget {
-  const StatusHome({Key? key}) : super(key: key);
+class TeamHome extends StatelessWidget {
+  const TeamHome({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

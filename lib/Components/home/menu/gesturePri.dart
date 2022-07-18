@@ -110,6 +110,7 @@ class GesturePri extends StatelessWidget {
         SizedBox(height: 5),
 
         //GRID ICONES SERVIÇOS
+
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: GridView.builder(
@@ -137,6 +138,7 @@ class GesturePri extends StatelessWidget {
             },
           ),
         ),
+
         SizedBox(
           height: 50,
         ),
