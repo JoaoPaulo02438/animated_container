@@ -20,23 +20,30 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: SafeArea(
-        child: Row(
-          children: [
-            select ? GesturePrincipal() : GestureRecolhido(),
-            Column(
-              children: [
-                UpperHome(),
-                SizedBox(height: 50),
-                TeamHome(),
-                SizedBox(height: 50),
-                DashboardHome(),
-                SizedBox(height: 50),
-                NotificationHome(),
-              ],
-            ),
-          ],
+      backgroundColor: Color.fromRGBO(255, 255, 255, 1),
+      body: Container(
+        child: SafeArea(
+          child: Row(
+            children: [
+              select ? GesturePrincipal() : GestureRecolhido(),
+              Container(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    UpperHome(),
+                    SizedBox(height: 40),
+                    TeamHome(),
+                    SizedBox(height: 40),
+                    DashboardHome(),
+                    SizedBox(height: 40),
+                    NotificationHome(),
+                    SizedBox(height: 40),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
