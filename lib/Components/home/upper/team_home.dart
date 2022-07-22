@@ -8,21 +8,62 @@ class TeamHome extends StatelessWidget {
     return Wrap(
       children: [
         Row(
-          //mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
               child: Align(
                 alignment: Alignment.centerLeft,
-                child: Text(
-                  ' Equipes : ',
-                  style: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.bold),
+                child: Row(
+                  children: [
+                    Text(
+                      ' Equipes : ',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Flexible(
+                      child: CircleAvatar(
+                        backgroundColor: Colors.red,
+                        backgroundImage: NetworkImage(
+                            'https://www.woolha.com/media/2020/03/eevee.png'),
+                        radius: 20,
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Flexible(
+                      child: CircleAvatar(
+                        backgroundColor: Colors.green,
+                        backgroundImage: NetworkImage(
+                            'https://www.woolha.com/media/2020/03/eevee.png'),
+                        radius: 20,
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Flexible(
+                      child: CircleAvatar(
+                        backgroundColor: Colors.yellow,
+                        backgroundImage: NetworkImage(
+                            'https://www.woolha.com/media/2020/03/eevee.png'),
+                        radius: 20,
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Flexible(
+                      child: CircleAvatar(
+                        backgroundColor: Colors.blue,
+                        backgroundImage: NetworkImage(
+                            'https://www.woolha.com/media/2020/03/eevee.png'),
+                        radius: 20,
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                  ],
                 ),
               ),
               width: MediaQuery.of(context).size.width * .20,
               height: MediaQuery.of(context).size.height * .07,
               decoration: BoxDecoration(
-                color: Color(0xffD52B1E),
+                color: Color.fromRGBO(255, 255, 255, 1),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey.withOpacity(0.5),

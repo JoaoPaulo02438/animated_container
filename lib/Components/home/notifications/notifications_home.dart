@@ -73,7 +73,7 @@ class NotificationHome extends StatelessWidget {
               children: [
                 Flexible(
                   child: Padding(
-                    padding: const EdgeInsets.all(6.0),
+                    padding: const EdgeInsets.only(right: 8.0),
                     child: Text(
                       'postado ás 14:37 em 21/07/2022',
                       style: TextStyle(
@@ -155,7 +155,7 @@ class NotificationHome extends StatelessWidget {
               children: [
                 Flexible(
                   child: Padding(
-                    padding: const EdgeInsets.all(6.0),
+                    padding: const EdgeInsets.only(right: 8.0),
                     child: Text(
                       'postado ás 14:37 em 21/07/2022',
                       style: TextStyle(
@@ -237,7 +237,7 @@ class NotificationHome extends StatelessWidget {
               children: [
                 Flexible(
                   child: Padding(
-                    padding: const EdgeInsets.all(6.0),
+                    padding: const EdgeInsets.only(right: 8.0),
                     child: Text(
                       'postado ás 14:37 em 21/07/2022',
                       style: TextStyle(

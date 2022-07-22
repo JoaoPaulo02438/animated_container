@@ -28,13 +28,13 @@ class _NewGraphicState extends State<NewGraphic> {
           //color: const Color.fromRGBO(255, 255, 255, 1),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
+              color: Colors.grey.withOpacity(0.2),
               spreadRadius: 3,
               blurRadius: 3,
               offset: const Offset(1, 1),
             ),
           ],
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(5),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -48,7 +48,7 @@ class _NewGraphicState extends State<NewGraphic> {
             ),
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.add),
+              icon: Icon(Icons.add_circle_outline),
               color: Colors.grey,
             ),
           ],

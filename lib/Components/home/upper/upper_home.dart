@@ -5,81 +5,95 @@ class UpperHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Wrap(
+      crossAxisAlignment: WrapCrossAlignment.center,
       children: [
-        Padding(
-            padding: const EdgeInsets.only(top: 10),
-            child: InkWell(
-              onTap: () {},
-              child: Flexible(
-                child: Container(
-                  width: MediaQuery.of(context).size.width * .07,
-                  height: MediaQuery.of(context).size.height * .04,
-                  child: Center(
-                    child: Text(
-                      'Home',
-                      style: TextStyle(
-                        fontSize: 12,
-                      ),
-                    ),
-                  ),
-                  decoration: BoxDecoration(
-                    color: Color(0xffD52B1E),
-                    borderRadius: BorderRadius.circular(2),
-                  ),
-                ),
-              ),
-            )),
-        SizedBox(width: 10),
-        Padding(
-            padding: const EdgeInsets.only(top: 10),
-            child: InkWell(
-              onTap: () {},
-              child: Flexible(
-                child: Container(
-                  width: MediaQuery.of(context).size.width * .07,
-                  height: MediaQuery.of(context).size.height * .04,
-                  child: Center(
-                    child: Text(
-                      'Widgets',
-                      style: TextStyle(
-                        fontSize: 12,
-                      ),
-                    ),
-                  ),
-                  decoration: BoxDecoration(
-                    color: Color(0xffD52B1E),
-                    borderRadius: BorderRadius.circular(2),
-                  ),
-                ),
-              ),
-            )),
-        SizedBox(width: 10),
-        Padding(
-            padding: const EdgeInsets.only(top: 10),
-            child: InkWell(
-              onTap: () {},
-              child: Flexible(
-                child: Container(
-                  width: MediaQuery.of(context).size.width * .09,
-                  height: MediaQuery.of(context).size.height * .04,
-                  child: Center(
-                    child: Flexible(
+        Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: Material(
+                elevation: 5,
+                color: Color(0xffFFFFFF),
+                borderRadius: BorderRadius.circular(10),
+                child: InkWell(
+                  splashColor: Colors.red,
+                  borderRadius: BorderRadius.circular(10),
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width * .08,
+                    height: MediaQuery.of(context).size.height * .04,
+                    child: Center(
                       child: Text(
-                        'Microsserviços',
+                        'Home',
                         style: TextStyle(
+                          color: Colors.black,
                           fontSize: 12,
                         ),
                       ),
                     ),
                   ),
-                  decoration: BoxDecoration(
-                    color: Color(0xffD52B1E),
-                    borderRadius: BorderRadius.circular(2),
-                  ),
+                  onTap: () {},
                 ),
               ),
-            )),
+            ),
+            SizedBox(width: 10),
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: Material(
+                elevation: 5,
+                color: Color(0xffFFFFFF),
+                borderRadius: BorderRadius.circular(10),
+                child: InkWell(
+                  splashColor: Colors.red,
+                  borderRadius: BorderRadius.circular(10),
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width * .09,
+                    height: MediaQuery.of(context).size.height * .04,
+                    child: Center(
+                      child: Text(
+                        'Widgets',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 12,
+                        ),
+                      ),
+                    ),
+                  ),
+                  onTap: () {},
+                ),
+              ),
+            ),
+            SizedBox(width: 10),
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: Material(
+                elevation: 5,
+                color: Color(0xffFFFFFF),
+                borderRadius: BorderRadius.circular(10),
+                child: InkWell(
+                  splashColor: Colors.red,
+                  borderRadius: BorderRadius.circular(10),
+                  child: Center(
+                    child: SizedBox(
+                      width: MediaQuery.of(context).size.width * .10,
+                      height: MediaQuery.of(context).size.height * .04,
+                      child: Center(
+                        child: Text(
+                          'Microserviços',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  onTap: () {},
+                ),
+              ),
+            ),
+          ],
+        )
       ],
     );
   }
