@@ -15,7 +15,7 @@ class DashWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Container(
-            width: MediaQuery.of(context).size.width * .25,
+            width: MediaQuery.of(context).size.width * .20,
             height: MediaQuery.of(context).size.height * .25,
             decoration: BoxDecoration(
               color: Color.fromRGBO(255, 255, 255, 1),
