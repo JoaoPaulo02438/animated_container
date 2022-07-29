@@ -1,13 +1,11 @@
 import 'package:animated_container/Components/home/notifications/notifications_home.dart';
 import 'package:animated_container/Components/home/upper/team_home.dart';
 import 'package:animated_container/Components/home/upper/upper_home.dart';
-
 import 'package:animated_container/components/home/menu/gesturePri.dart';
 import 'package:animated_container/components/home/menu/gestureRec.dart';
 import 'package:animated_container/components/home/dashboards/dashboard_home.dart';
-
 import 'package:flutter/material.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
+
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);

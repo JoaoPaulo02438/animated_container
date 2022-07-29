@@ -1,5 +1,5 @@
 // ignore_for_file: library_private_types_in_public_api, prefer_const_constructors_in_immutables
-
+// @dart=2.9
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';

@@ -1,3 +1,4 @@
+import 'package:animated_container/Views/servicos/pesquisa_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -124,7 +125,14 @@ class GesturePri extends StatelessWidget {
             itemCount: 7,
             itemBuilder: (context, int index) {
               return InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PesquisaPage(),
+                    ),
+                  );
+                },
                 child: Container(
                   padding:
                       EdgeInsets.only(left: 0, top: 5, right: 0, bottom: 5),
