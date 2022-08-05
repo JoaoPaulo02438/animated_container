@@ -1,9 +1,9 @@
-import 'dart:ui';
-
 import 'package:animated_container/Components/home/menu/gestureRec.dart';
 import 'package:animated_container/Components/home/upper/upper_home.dart';
+
 import 'package:animated_container/components/home/menu/gesturePri.dart';
-import 'package:animated_container/widgets/retract_animation.dart';
+import 'package:animated_container/data/pesquisa_data.dart';
+
 import 'package:flutter/material.dart';
 
 import '../../widgets/main_animation.dart';
@@ -16,7 +16,18 @@ class PesquisaPage extends StatefulWidget {
 }
 
 class _PesquisaPageState extends State<PesquisaPage> {
+  final DataTableSource data = MyData();
+
+  // define a list of options for the dropdown
+  final List<String> _filter = ["Id", "Titulo", "Criação", "Status"];
+  final List<String> _order = ['Ativa', 'Finalizada', 'Pausada', 'Pendente'];
+
+  // the selected value
+  String? _selectedFilter;
+  String? _selectedOrder;
+
   bool select = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,76 +49,224 @@ class _PesquisaPageState extends State<PesquisaPage> {
                       UpperHome(),
                     ],
                   ),
-                  Column(
+                  SizedBox(height: 10),
+                  Row(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 8),
-                        child: Container(
-                          width: MediaQuery.of(context).size.width * 100,
-                          height: MediaQuery.of(context).size.height * .08,
-                          color: Colors.yellow,
+                      Material(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.circular(5),
+                        child: InkWell(
+                          onTap: () {},
+                          splashColor: Colors.red,
+                          borderRadius: BorderRadius.circular(10),
+                          child: Flexible(
+                            child: SizedBox(
+                              width: MediaQuery.of(context).size.width * .10,
+                              height: MediaQuery.of(context).size.height * .05,
+                              child: Center(
+                                child: Text(
+                                  '+ Nova Pesquisa',
+                                  style: TextStyle(
+                                      color: Color(0xffFFFFFF), fontSize: 14),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * .10,
+                        height: MediaQuery.of(context).size.height * .09,
+                        child: TextButton.icon(
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.contact_support_outlined,
+                            color: Colors.grey,
+                          ),
+                          label: Text(
+                            'Ajuda',
+                            style: TextStyle(color: Colors.grey),
+                          ),
                         ),
                       ),
                       Container(
-                        width: MediaQuery.of(context).size.width * 100,
-                        height: MediaQuery.of(context).size.height * .08,
-                        color: Colors.purple,
-                      ),
-                      Container(
-                        //color: Colors.yellow,
-                        width: MediaQuery.of(context).size.width * 100,
-                        height: MediaQuery.of(context).size.height * .08,
-                        child: GridView.builder(
-                            shrinkWrap: true,
-                            gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 4,
-                              crossAxisSpacing: 5.0,
-                              mainAxisSpacing: 5.0,
-                            ),
-                            itemCount: 4,
-                            itemBuilder: (context, index) {
-                              return TextButton.icon(
-                                onPressed: () {},
-                                icon: Icon(
-                                  Icons.gradient,
-                                  color: Colors.black,
-                                ),
-                                label: Text(
-                                  'data',
-                                  style: TextStyle(color: Colors.black),
-                                ),
-                              );
-                            }),
-                      ),
-                      Container(
-                        width: MediaQuery.of(context).size.width * 100,
-                        height: MediaQuery.of(context).size.height * .65,
-                        color: Colors.blueGrey,
-                        child: GridView.builder(
-                            gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 4,
-                              crossAxisSpacing: 5.0,
-                              mainAxisSpacing: 5.0,
-                            ),
-                            itemCount: 12,
-                            itemBuilder: (context, index) {
-                              return TextButton.icon(
-                                onPressed: () {},
-                                icon: Icon(
-                                  Icons.gradient,
-                                  color: Colors.black,
-                                ),
-                                label: Text(
-                                  'data',
-                                  style: TextStyle(color: Colors.black),
-                                ),
-                              );
-                            }),
+                        width: MediaQuery.of(context).size.width * .21,
+                        height: MediaQuery.of(context).size.height * .09,
+                        color: Color(0xffFFFFFF),
                       ),
                     ],
-                  )
+                  ),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: SizedBox(
+                          width: MediaQuery.of(context).size.width * .22,
+                          height: MediaQuery.of(context).size.height * .09,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Color(0xffFFFFFF),
+                              borderRadius: BorderRadius.circular(25),
+                            ),
+                            height: 40,
+                            width: 250,
+                            child: TextField(
+                              decoration: InputDecoration(
+                                  hintText: 'Pesquisar',
+                                  border: InputBorder.none,
+                                  enabledBorder: InputBorder.none,
+                                  focusedBorder: InputBorder.none,
+                                  hintStyle: TextStyle(color: Colors.grey),
+                                  contentPadding: EdgeInsets.symmetric(
+                                      horizontal: 20.0, vertical: 20.0),
+                                  suffixIcon: Icon(
+                                    Icons.search,
+                                    size: 12.0,
+                                    color: Colors.grey,
+                                  )),
+                              textAlign: TextAlign.left,
+                              style:
+                                  TextStyle(fontSize: 15, color: Colors.black),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width * .11,
+                        height: MediaQuery.of(context).size.height * .09,
+                        color: Color(0xffFFFFFF),
+                        child: DropdownButton<String>(
+                          value: _selectedFilter,
+                          onChanged: (value) {
+                            setState(() {
+                              _selectedFilter = value;
+                            });
+                          },
+                          hint: Text(
+                            'Filtrar por',
+                            style: TextStyle(color: Colors.grey),
+                          ),
+                          // Hide the default underline
+                          underline: Container(),
+                          // set the color of the dropdown menu
+                          dropdownColor: Color(0xffFFFFFF),
+                          icon: const Icon(
+                            Icons.arrow_drop_down,
+                            color: Colors.grey,
+                          ),
+                          isExpanded: true,
+
+                          // The list of options
+                          items: _filter
+                              .map((e) => DropdownMenuItem(
+                                    value: e,
+                                    child: Container(
+                                      alignment: Alignment.centerLeft,
+                                      child: Text(
+                                        e,
+                                        style: const TextStyle(fontSize: 12),
+                                      ),
+                                    ),
+                                  ))
+                              .toList(),
+                        ),
+                      ),
+                      Container(
+                        width: MediaQuery.of(context).size.width * .11,
+                        height: MediaQuery.of(context).size.height * .09,
+                        color: Color(0xffFFFFFF),
+                        child: DropdownButton<String>(
+                          value: _selectedOrder,
+                          onChanged: (value) {
+                            setState(() {
+                              _selectedOrder = value;
+                            });
+                          },
+                          hint: Text(
+                            'Ordenar por',
+                            style: TextStyle(color: Colors.grey),
+                          ),
+                          // Hide the default underline
+                          underline: Container(),
+                          // set the color of the dropdown menu
+                          dropdownColor: Color(0xffFFFFFF),
+                          icon: const Icon(
+                            Icons.arrow_drop_down,
+                            color: Colors.grey,
+                          ),
+                          isExpanded: true,
+
+                          // The list of options
+                          items: _order
+                              .map((e) => DropdownMenuItem(
+                                    value: e,
+                                    child: Container(
+                                      alignment: Alignment.centerLeft,
+                                      child: Text(
+                                        e,
+                                        style: const TextStyle(fontSize: 12),
+                                      ),
+                                    ),
+                                  ))
+                              .toList(),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  SizedBox(height: 10),
+                  Expanded(
+                    child: SizedBox(
+                      width: MediaQuery.of(context).size.width * 100,
+                      height: MediaQuery.of(context).size.height * .60,
+                      child: ListView(
+                        children: [
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Container(
+                            color: Colors.grey[300],
+                            child: PaginatedDataTable(
+                              source: data,
+                              //header: const Text('Pesquisas'),
+                              columns: [
+                                DataColumn(
+                                  label: Text(
+                                    'ID',
+                                    style: TextStyle(
+                                      color: Colors.grey,
+                                    ),
+                                  ),
+                                ),
+                                DataColumn(
+                                    label: Text(
+                                  'Titulo',
+                                  style: TextStyle(color: Colors.grey),
+                                )),
+                                DataColumn(
+                                    label: Text(
+                                  'Data Criação',
+                                  style: TextStyle(color: Colors.grey),
+                                )),
+                                DataColumn(
+                                    label: Text(
+                                  'Status',
+                                  style: TextStyle(color: Colors.grey),
+                                )),
+                              ],
+                              dataRowHeight: 70,
+                              arrowHeadColor: Colors.red,
+                              columnSpacing: 100,
+                              horizontalMargin: 10,
+                              rowsPerPage: 5,
+                              showCheckboxColumn: false,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),

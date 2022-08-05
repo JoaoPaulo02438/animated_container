@@ -1,4 +1,5 @@
 import 'package:animated_container/Views/servicos/pesquisa_page.dart';
+import 'package:animated_container/widgets/widget_pagina_desenvolvimento.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -114,7 +115,7 @@ class GesturePri extends StatelessWidget {
 
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: GridView.builder(
+          child: GridView(
             //physics: NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -122,9 +123,81 @@ class GesturePri extends StatelessWidget {
               crossAxisSpacing: 4.0,
               mainAxisSpacing: 3.0,
             ),
-            itemCount: 7,
-            itemBuilder: (context, int index) {
-              return InkWell(
+
+            children: [
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => PaginaDesenvolvimento()),
+                  );
+                },
+                child: Container(
+                  padding:
+                      EdgeInsets.only(left: 0, top: 5, right: 0, bottom: 5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                  ),
+                  child: Image.asset('images/base_de_dados.png'),
+                ),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => PaginaDesenvolvimento()),
+                  );
+                },
+                child: Container(
+                  padding:
+                      EdgeInsets.only(left: 0, top: 5, right: 0, bottom: 5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                  ),
+                  child: Image.asset('images/jornada.png'),
+                ),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => PaginaDesenvolvimento()),
+                  );
+                },
+                child: Container(
+                  padding:
+                      EdgeInsets.only(left: 0, top: 5, right: 0, bottom: 5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                  ),
+                  child: Image.asset('images/trajetos.png'),
+                ),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => PaginaDesenvolvimento()),
+                  );
+                },
+                child: Container(
+                  padding:
+                      EdgeInsets.only(left: 0, top: 5, right: 0, bottom: 5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                  ),
+                  child: Image.asset('images/estoque.png'),
+                ),
+              ),
+              InkWell(
                 onTap: () {
                   Navigator.push(
                     context,
@@ -140,12 +213,70 @@ class GesturePri extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                     color: Colors.white,
                   ),
-                  child: Image.asset(images[index]),
+                  child: Image.asset('images/pesquisa.png'),
                 ),
-              );
-            },
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => PaginaDesenvolvimento()),
+                  );
+                },
+                child: Container(
+                  padding:
+                      EdgeInsets.only(left: 0, top: 5, right: 0, bottom: 5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                  ),
+                  child: Image.asset('images/tarefas.png'),
+                ),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => PaginaDesenvolvimento()),
+                  );
+                },
+                child: Container(
+                  padding:
+                      EdgeInsets.only(left: 0, top: 5, right: 0, bottom: 5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.white,
+                  ),
+                  child: Image.asset('images/avisos.png'),
+                ),
+              ),
+            ],
           ),
         ),
+        //itemCount: 7,
+        // itemBuilder: (context, int index) {
+        //   return InkWell(
+        //     onTap: () {
+        //       Navigator.push(
+        //         context,
+        //         MaterialPageRoute(
+        //           builder: (context) => PesquisaPage(),
+        //         ),
+        //       );
+        //     },
+        //     child: Container(
+        //       padding:
+        //           EdgeInsets.only(left: 0, top: 5, right: 0, bottom: 5),
+        //       decoration: BoxDecoration(
+        //         borderRadius: BorderRadius.circular(10),
+        //         color: Colors.white,
+        //       ),
+        //       child: Image.asset(images[index]),
+        //     ),
+        //   );
+        // },
 
         SizedBox(
           height: 50,

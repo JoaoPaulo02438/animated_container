@@ -1,3 +1,5 @@
+import 'package:animated_container/Views/home.dart';
+import 'package:animated_container/widgets/widget_pagina_desenvolvimento.dart';
 import 'package:flutter/material.dart';
 
 class UpperHome extends StatelessWidget {
@@ -29,7 +31,14 @@ class UpperHome extends StatelessWidget {
                   ),
                 ),
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Home(),
+                  ),
+                );
+              },
             ),
           ),
         ),
@@ -56,7 +65,14 @@ class UpperHome extends StatelessWidget {
                   ),
                 ),
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PaginaDesenvolvimento(),
+                  ),
+                );
+              },
             ),
           ),
         ),
@@ -83,7 +99,14 @@ class UpperHome extends StatelessWidget {
                   ),
                 ),
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PaginaDesenvolvimento(),
+                  ),
+                );
+              },
             ),
           ),
         ),
