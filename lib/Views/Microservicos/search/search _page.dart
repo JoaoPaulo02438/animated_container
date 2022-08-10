@@ -1,21 +1,22 @@
 import 'package:animated_container/Components/home/menu/gestureRec.dart';
 import 'package:animated_container/Components/home/upper/upper_home.dart';
+import 'package:animated_container/Views/Microservicos/search/search_new.dart';
 
 import 'package:animated_container/components/home/menu/gesturePri.dart';
-import 'package:animated_container/data/pesquisa_data.dart';
-
+import 'package:animated_container/data/search_data.dart';
+import 'package:animated_container/widgets/widget_pagina_desenvolvimento.dart';
 import 'package:flutter/material.dart';
 
-import '../../widgets/main_animation.dart';
+import 'search_information.dart';
 
-class PesquisaPage extends StatefulWidget {
-  const PesquisaPage({Key? key}) : super(key: key);
+class SearchPage extends StatefulWidget {
+  const SearchPage({Key? key}) : super(key: key);
 
   @override
-  State<PesquisaPage> createState() => _PesquisaPageState();
+  State<SearchPage> createState() => _SearchPageState();
 }
 
-class _PesquisaPageState extends State<PesquisaPage> {
+class _SearchPageState extends State<SearchPage> {
   final DataTableSource data = MyData();
 
   // define a list of options for the dropdown
@@ -56,7 +57,14 @@ class _PesquisaPageState extends State<PesquisaPage> {
                         color: Colors.grey,
                         borderRadius: BorderRadius.circular(5),
                         child: InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => SearchNew(),
+                              ),
+                            );
+                          },
                           splashColor: Colors.red,
                           borderRadius: BorderRadius.circular(10),
                           child: Flexible(
@@ -80,7 +88,7 @@ class _PesquisaPageState extends State<PesquisaPage> {
                         child: TextButton.icon(
                           onPressed: () {},
                           icon: Icon(
-                            Icons.contact_support_outlined,
+                            Icons.help_outline,
                             color: Colors.grey,
                           ),
                           label: Text(
@@ -227,40 +235,50 @@ class _PesquisaPageState extends State<PesquisaPage> {
                           ),
                           Container(
                             color: Colors.grey[300],
-                            child: PaginatedDataTable(
-                              source: data,
-                              //header: const Text('Pesquisas'),
-                              columns: [
-                                DataColumn(
-                                  label: Text(
-                                    'ID',
-                                    style: TextStyle(
-                                      color: Colors.grey,
+                            child: InkWell(
+                              onDoubleTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => SearchInformation(),
+                                  ),
+                                );
+                              },
+                              child: PaginatedDataTable(
+                                source: data,
+                                //header: const Text('Pesquisas'),
+                                columns: [
+                                  DataColumn(
+                                    label: Text(
+                                      'ID',
+                                      style: TextStyle(
+                                        color: Colors.grey,
+                                      ),
                                     ),
                                   ),
-                                ),
-                                DataColumn(
-                                    label: Text(
-                                  'Titulo',
-                                  style: TextStyle(color: Colors.grey),
-                                )),
-                                DataColumn(
-                                    label: Text(
-                                  'Data Criação',
-                                  style: TextStyle(color: Colors.grey),
-                                )),
-                                DataColumn(
-                                    label: Text(
-                                  'Status',
-                                  style: TextStyle(color: Colors.grey),
-                                )),
-                              ],
-                              dataRowHeight: 70,
-                              arrowHeadColor: Colors.red,
-                              columnSpacing: 100,
-                              horizontalMargin: 10,
-                              rowsPerPage: 5,
-                              showCheckboxColumn: false,
+                                  DataColumn(
+                                      label: Text(
+                                    'Titulo',
+                                    style: TextStyle(color: Colors.grey),
+                                  )),
+                                  DataColumn(
+                                      label: Text(
+                                    'Data Criação',
+                                    style: TextStyle(color: Colors.grey),
+                                  )),
+                                  DataColumn(
+                                      label: Text(
+                                    'Status',
+                                    style: TextStyle(color: Colors.grey),
+                                  )),
+                                ],
+                                dataRowHeight: 70,
+                                arrowHeadColor: Colors.red,
+                                columnSpacing: 100,
+                                horizontalMargin: 10,
+                                rowsPerPage: 5,
+                                showCheckboxColumn: false,
+                              ),
                             ),
                           ),
                         ],

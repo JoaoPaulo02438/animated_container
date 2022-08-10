@@ -1,4 +1,7 @@
-import 'package:animated_container/Views/servicos/pesquisa_page.dart';
+import 'package:animated_container/Views/Microservicos/journey/journey_page.dart';
+import 'package:animated_container/Views/Microservicos/search/search%20_page.dart';
+import 'package:animated_container/Views/Microservicos/tasks/tasks_page.dart';
+
 import 'package:animated_container/widgets/widget_pagina_desenvolvimento.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -148,7 +151,8 @@ class GesturePri extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => PaginaDesenvolvimento()),
+                      builder: (context) => JourneyPage(),
+                    ),
                   );
                 },
                 child: Container(
@@ -202,7 +206,7 @@ class GesturePri extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => PesquisaPage(),
+                      builder: (context) => SearchPage(),
                     ),
                   );
                 },
@@ -220,8 +224,7 @@ class GesturePri extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => PaginaDesenvolvimento()),
+                    MaterialPageRoute(builder: (context) => TasksPage()),
                   );
                 },
                 child: Container(
