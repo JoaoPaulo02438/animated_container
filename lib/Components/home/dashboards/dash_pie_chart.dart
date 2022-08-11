@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class PieChart extends StatefulWidget {
+  const PieChart({Key? key}) : super(key: key);
+
   @override
   _PieChartState createState() => _PieChartState();
 }
@@ -22,7 +24,7 @@ class _PieChartState extends State<PieChart> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: MediaQuery.of(context).size.width * .20,
+        width: MediaQuery.of(context).size.width * .25,
         height: MediaQuery.of(context).size.height * .25,
         decoration: BoxDecoration(
           color: const Color.fromRGBO(255, 255, 255, 1),
@@ -54,12 +56,10 @@ class _PieChartState extends State<PieChart> {
 
   List<GDPData> getChartData() {
     final List<GDPData> chartData = [
-      GDPData('dados1', 100),
-      GDPData('dados2', 100),
-      GDPData('dados3', 100),
-      GDPData('dados4', 100),
-      GDPData('dados5', 100),
-      GDPData('dados6', 100),
+      GDPData('Visita', 200),
+      GDPData('Treinamento', 150),
+      GDPData('Trocar máquina stone', 50),
+      GDPData('Atualizar app', 50),
     ];
     return chartData;
   }

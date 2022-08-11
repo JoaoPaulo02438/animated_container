@@ -1,6 +1,7 @@
 import 'package:animated_container/Components/home/menu/gestureRec.dart';
 import 'package:animated_container/Components/home/upper/upper_home.dart';
-import 'package:animated_container/Views/Microservicos/search/search_new.dart';
+import 'package:animated_container/Views/Microservices/Search/search_new.dart';
+
 
 import 'package:animated_container/components/home/menu/gesturePri.dart';
 import 'package:animated_container/data/search_data.dart';

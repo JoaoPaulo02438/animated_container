@@ -1,4 +1,7 @@
 import 'package:animated_container/Components/home/upper/upper_home.dart';
+import 'package:animated_container/Views/microservices/Tasks/tasks_detail.dart';
+import 'package:animated_container/Views/microservices/Tasks/tasks_new.dart';
+
 import 'package:animated_container/components/home/menu/gesturePri.dart';
 import 'package:animated_container/components/home/menu/gestureRec.dart';
 import 'package:animated_container/data/tasks_data.dart';
@@ -93,7 +96,7 @@ class _TasksPageState extends State<TasksPage> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => PaginaDesenvolvimento(),
+                                  builder: (context) => TasksNew(),
                                 ),
                               );
                             },
@@ -235,8 +238,7 @@ class _TasksPageState extends State<TasksPage> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) =>
-                                            PaginaDesenvolvimento(),
+                                        builder: (context) => TasksDetail(),
                                       ),
                                     );
                                   },

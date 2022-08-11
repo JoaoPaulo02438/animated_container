@@ -1,5 +1,6 @@
 import 'package:animated_container/Components/home/upper/upper_home.dart';
-import 'package:animated_container/Views/Microservicos/search/search%20_page.dart';
+import 'package:animated_container/Views/microservices/Search/search%20_page.dart';
+
 import 'package:animated_container/components/home/menu/gesturePri.dart';
 import 'package:animated_container/components/home/menu/gestureRec.dart';
 import 'package:flutter/material.dart';

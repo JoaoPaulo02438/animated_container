@@ -1,7 +1,6 @@
-import 'package:animated_container/Views/Microservicos/journey/journey_page.dart';
-import 'package:animated_container/Views/Microservicos/search/search%20_page.dart';
-import 'package:animated_container/Views/Microservicos/tasks/tasks_page.dart';
-
+import 'package:animated_container/Views/microservices/Journey/journey_page.dart';
+import 'package:animated_container/Views/microservices/Search/search%20_page.dart';
+import 'package:animated_container/Views/microservices/Tasks/tasks_page.dart';
 import 'package:animated_container/widgets/widget_pagina_desenvolvimento.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -224,7 +223,9 @@ class GesturePri extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => TasksPage()),
+                    MaterialPageRoute(
+                      builder: (context) => TasksPage(),
+                    ),
                   );
                 },
                 child: Container(

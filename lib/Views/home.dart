@@ -6,7 +6,6 @@ import 'package:animated_container/components/home/menu/gestureRec.dart';
 import 'package:animated_container/components/home/dashboards/dashboard_home.dart';
 import 'package:flutter/material.dart';
 
-
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -40,21 +39,21 @@ class _HomeState extends State<Home> {
                       UpperHome(),
                     ],
                   ),
-                  SizedBox(height: 40),
+                  SizedBox(height: 30),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       TeamHome(),
                     ],
                   ),
-                  SizedBox(height: 40),
+                  SizedBox(height: 30),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       DashboardHome(),
                     ],
                   ),
-                  SizedBox(height: 40),
+                  SizedBox(height: 30),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
