@@ -1,7 +1,7 @@
-import 'package:animated_container/Components/home/menu/gesturePri.dart';
-import 'package:animated_container/Components/home/menu/gestureRec.dart';
+import 'package:animated_container/Components/Home/container/mainContainer.dart';
+import 'package:animated_container/Components/Home/container/retractContainer.dart';
 import 'package:animated_container/Components/home/upper/upper_home.dart';
-
+import 'package:animated_container/Widgets/widget_paginated_table.dart';
 import 'package:animated_container/data/search_data.dart';
 import 'package:animated_container/data/search_data_information.dart';
 import 'package:flutter/material.dart';
@@ -326,7 +326,7 @@ class _SearchInformationState extends State<SearchInformation> {
                     ),
                   ],
                 ),
-                Expanded(
+                /*Expanded(
                   child: SizedBox(
                     width: MediaQuery.of(context).size.width * 100,
                     height: MediaQuery.of(context).size.height * .60,
@@ -407,6 +407,39 @@ class _SearchInformationState extends State<SearchInformation> {
                       ],
                     ),
                   ),
+                ),*/
+                WidgetPaginatedTable(
+                  width: MediaQuery.of(context).size.width * 100,
+                  height: MediaQuery.of(context).size.height * .60,
+                  source: information,
+                  onTap: () {},
+                  showCheckboxColumn: false,
+                  rowsPerPage: 3,
+                  horizontalMargin: 10,
+                  dataRowHeight: 70,
+                  columnSpacing: 50,
+                  columns1: DataColumn(
+                    label: Text('ID'),
+                  ),
+                  columns2: DataColumn(
+                    label: Text('Data inicial'),
+                  ),
+                  columns3: DataColumn(
+                    label: Text('Data final'),
+                  ),
+                  columns4: DataColumn(
+                    label: Text('Grupo'),
+                  ),
+                  columns5: DataColumn(
+                    label: Text('Base de dados'),
+                  ),
+                  columns6: DataColumn(
+                    label: Text('MicroRegião'),
+                  ),
+                  columns7: DataColumn(
+                    label: Text('Usuário'),
+                  ),
+                  color: Colors.grey,
                 ),
               ],
             ),
@@ -434,7 +467,7 @@ class _SearchInformationState extends State<SearchInformation> {
               duration: Duration(milliseconds: 1),
               height: MediaQuery.of(context).size.height / 0.9,
               width: MediaQuery.of(context).size.height / 2.5,
-              child: GesturePri()),
+              child: MainContainer()),
         ),
       ),
     );
@@ -459,7 +492,7 @@ class _SearchInformationState extends State<SearchInformation> {
                 duration: Duration(milliseconds: 1),
                 height: MediaQuery.of(context).size.height / 0.5,
                 width: MediaQuery.of(context).size.height / 9,
-                child: GestureRec()),
+                child: RetractContainer()),
           ),
         ),
       ),

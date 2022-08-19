@@ -1,3 +1,4 @@
+import 'package:animated_container/widgets/widget_circle_avatar.dart';
 import 'package:flutter/material.dart';
 
 class TeamHome extends StatelessWidget {
@@ -13,40 +14,32 @@ class TeamHome extends StatelessWidget {
             ),
           ),
           SizedBox(width: 10),
-          Flexible(
-            child: CircleAvatar(
-              backgroundColor: Colors.red,
-              backgroundImage: NetworkImage(
-                  'https://www.woolha.com/media/2020/03/eevee.png'),
-              radius: 20,
-            ),
+          WidgetCircleAvatar(
+            color: Colors.yellow,
+            radius: 20,
+            backgroundImage: NetworkImage(
+                'https://storage.googleapis.com/production-hostgator-brasil-v1-0-8/168/402168/mIDsiod9/3c6176441f12428f8040b9944a123aef'),
           ),
           SizedBox(width: 10),
-          Flexible(
-            child: CircleAvatar(
-              backgroundColor: Colors.green,
-              backgroundImage: NetworkImage(
-                  'https://www.woolha.com/media/2020/03/eevee.png'),
-              radius: 20,
-            ),
+          WidgetCircleAvatar(
+            color: Colors.green,
+            radius: 20,
+            backgroundImage: NetworkImage(
+                'https://storage.googleapis.com/production-hostgator-brasil-v1-0-8/168/402168/mIDsiod9/3c6176441f12428f8040b9944a123aef'),
           ),
           SizedBox(width: 10),
-          Flexible(
-            child: CircleAvatar(
-              backgroundColor: Colors.yellow,
-              backgroundImage: NetworkImage(
-                  'https://www.woolha.com/media/2020/03/eevee.png'),
-              radius: 20,
-            ),
+          WidgetCircleAvatar(
+            color: Colors.yellow,
+            radius: 20,
+            backgroundImage: NetworkImage(
+                'https://storage.googleapis.com/production-hostgator-brasil-v1-0-8/168/402168/mIDsiod9/3c6176441f12428f8040b9944a123aef'),
           ),
           SizedBox(width: 10),
-          Flexible(
-            child: CircleAvatar(
-              backgroundColor: Colors.blue,
-              backgroundImage: NetworkImage(
-                  'https://www.woolha.com/media/2020/03/eevee.png'),
-              radius: 20,
-            ),
+          WidgetCircleAvatar(
+            color: Colors.green,
+            radius: 20,
+            backgroundImage: NetworkImage(
+                'https://storage.googleapis.com/production-hostgator-brasil-v1-0-8/168/402168/mIDsiod9/3c6176441f12428f8040b9944a123aef'),
           ),
           SizedBox(width: 10),
         ],

@@ -3,14 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
-class PieChart extends StatefulWidget {
-  const PieChart({Key? key}) : super(key: key);
+class DashChartsPie extends StatefulWidget {
+  const DashChartsPie({Key? key}) : super(key: key);
 
   @override
-  _PieChartState createState() => _PieChartState();
+  _DashChartsPieState createState() => _DashChartsPieState();
 }
 
-class _PieChartState extends State<PieChart> {
+class _DashChartsPieState extends State<DashChartsPie> {
   late List<GDPData> _chartData;
   late TooltipBehavior _tooltipBehavior;
 

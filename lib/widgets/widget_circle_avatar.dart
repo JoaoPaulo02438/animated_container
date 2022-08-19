@@ -2,19 +2,24 @@ import 'package:flutter/material.dart';
 
 class WidgetCircleAvatar extends StatelessWidget {
   final Color color;
-  String? src;
+  final double radius;
+  final ImageProvider? backgroundImage;
 
   WidgetCircleAvatar({
     Key? key,
-    this.color = Colors.blue,
-    this.src,
+    required this.color,
+    required this.radius,
+    required this.backgroundImage,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return CircleAvatar(
-      backgroundColor: color,
-      child: Image.network('src'),
+    return Flexible(
+      child: CircleAvatar(
+        backgroundImage: backgroundImage,
+        backgroundColor: color,
+        radius: radius,
+      ),
     );
   }
 }

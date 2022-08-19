@@ -1,13 +1,9 @@
-import 'package:animated_container/Components/home/menu/gestureRec.dart';
+import 'package:animated_container/Components/Home/container/mainContainer.dart';
+import 'package:animated_container/Components/Home/container/retractContainer.dart';
 import 'package:animated_container/Components/home/upper/upper_home.dart';
 import 'package:animated_container/Views/Microservices/Search/search_new.dart';
-
-
-import 'package:animated_container/components/home/menu/gesturePri.dart';
 import 'package:animated_container/data/search_data.dart';
-import 'package:animated_container/widgets/widget_pagina_desenvolvimento.dart';
 import 'package:flutter/material.dart';
-
 import 'search_information.dart';
 
 class SearchPage extends StatefulWidget {
@@ -313,7 +309,7 @@ class _SearchPageState extends State<SearchPage> {
               duration: Duration(milliseconds: 1),
               height: MediaQuery.of(context).size.height / 0.9,
               width: MediaQuery.of(context).size.height / 2.5,
-              child: GesturePri()),
+              child: MainContainer()),
         ),
       ),
     );
@@ -338,7 +334,7 @@ class _SearchPageState extends State<SearchPage> {
                 duration: Duration(milliseconds: 1),
                 height: MediaQuery.of(context).size.height / 0.5,
                 width: MediaQuery.of(context).size.height / 9,
-                child: GestureRec()),
+                child: RetractContainer()),
           ),
         ),
       ),

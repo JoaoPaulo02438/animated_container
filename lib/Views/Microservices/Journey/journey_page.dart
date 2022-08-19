@@ -1,6 +1,6 @@
+import 'package:animated_container/Components/Home/container/mainContainer.dart';
+import 'package:animated_container/Components/Home/container/retractContainer.dart';
 import 'package:animated_container/Components/home/upper/upper_home.dart';
-import 'package:animated_container/components/home/menu/gesturePri.dart';
-import 'package:animated_container/components/home/menu/gestureRec.dart';
 import 'package:animated_container/data/journey_data.dart';
 import 'package:animated_container/widgets/widget_pagina_desenvolvimento.dart';
 import 'package:flutter/material.dart';
@@ -327,7 +327,7 @@ class _JourneyPageState extends State<JourneyPage> {
               duration: Duration(milliseconds: 1),
               height: MediaQuery.of(context).size.height / 0.9,
               width: MediaQuery.of(context).size.height / 2.5,
-              child: GesturePri()),
+              child: MainContainer()),
         ),
       ),
     );
@@ -352,7 +352,7 @@ class _JourneyPageState extends State<JourneyPage> {
                 duration: Duration(milliseconds: 1),
                 height: MediaQuery.of(context).size.height / 0.5,
                 width: MediaQuery.of(context).size.height / 9,
-                child: GestureRec()),
+                child: RetractContainer()),
           ),
         ),
       ),

@@ -4,12 +4,12 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
-class NewGraphic extends StatefulWidget {
+class DashChartsNew extends StatefulWidget {
   @override
-  _NewGraphicState createState() => _NewGraphicState();
+  _DashChartsNewState createState() => _DashChartsNewState();
 }
 
-class _NewGraphicState extends State<NewGraphic> {
+class _DashChartsNewState extends State<DashChartsNew> {
   @override
   Widget build(BuildContext context) {
     return DottedBorder(

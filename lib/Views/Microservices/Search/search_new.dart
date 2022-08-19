@@ -1,8 +1,8 @@
+import 'package:animated_container/Components/Home/container/mainContainer.dart';
+import 'package:animated_container/Components/Home/container/retractContainer.dart';
 import 'package:animated_container/Components/home/upper/upper_home.dart';
 import 'package:animated_container/Views/microservices/Search/search%20_page.dart';
-
-import 'package:animated_container/components/home/menu/gesturePri.dart';
-import 'package:animated_container/components/home/menu/gestureRec.dart';
+import 'package:animated_container/Widgets/widget_search_textbutton.dart';
 import 'package:flutter/material.dart';
 
 class SearchNew extends StatefulWidget {
@@ -40,11 +40,15 @@ class _SearchNewState extends State<SearchNew> {
             width: MediaQuery.of(context).size.height / 0.8,
             child: Column(
               children: [
+                //top buttons
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [UpperHome()],
                 ),
+
                 SizedBox(height: 30),
+
+                //title new search
                 Row(
                   children: [
                     TextButton.icon(
@@ -71,9 +75,13 @@ class _SearchNewState extends State<SearchNew> {
                     ),
                   ],
                 ),
+
                 SizedBox(height: 30),
+
+                //container 
                 Row(
                   children: [
+                    //buttons
                     Column(
                       children: [
                         Container(
@@ -99,98 +107,57 @@ class _SearchNewState extends State<SearchNew> {
                               SizedBox(
                                 height: 40,
                               ),
-                              Padding(
-                                padding: const EdgeInsets.all(4.0),
-                                child: TextButton(
-                                  style: ButtonStyle(
-                                    backgroundColor:
-                                        MaterialStateProperty.all<Color>(
-                                            Colors.grey),
-                                  ),
-                                  onPressed: () {},
-                                  child: Center(
-                                    child: Text(
-                                      'Teste de qualidade',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 14,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ),
-                                ),
+                              WidgetSearchTextButton(
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                        Colors.grey),
+                                onPressed: () {},
+                                nameButton: 'Teste de qualidade',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                                color: Colors.white,
                               ),
-                              Padding(
-                                padding: const EdgeInsets.all(4.0),
-                                child: TextButton(
-                                  style: ButtonStyle(
-                                    backgroundColor:
-                                        MaterialStateProperty.all<Color>(
-                                            Colors.grey),
-                                  ),
-                                  onPressed: () {},
-                                  child: Center(
-                                    child: Text(
-                                      'Pesquisa de satisfação',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 14,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ),
-                                ),
+                              WidgetSearchTextButton(
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                        Colors.grey),
+                                onPressed: () {},
+                                nameButton: 'Pesquisa de satisfação',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                                color: Colors.white,
                               ),
-                              Padding(
-                                padding: const EdgeInsets.all(4.0),
-                                child: TextButton(
-                                  style: ButtonStyle(
-                                    backgroundColor:
-                                        MaterialStateProperty.all<Color>(
-                                            Colors.grey),
-                                  ),
-                                  onPressed: () {},
-                                  child: Center(
-                                    child: Text(
-                                      'Apuração de estoque',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 14,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ),
-                                ),
+                              WidgetSearchTextButton(
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                        Colors.grey),
+                                onPressed: () {},
+                                nameButton: 'Apuração de estoque',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                                color: Colors.white,
                               ),
-                              Padding(
-                                padding: const EdgeInsets.all(4.0),
-                                child: TextButton(
-                                  style: ButtonStyle(
-                                    backgroundColor:
-                                        MaterialStateProperty.all<Color>(
-                                            Colors.grey),
-                                  ),
-                                  onPressed: () {},
-                                  child: Center(
-                                    child: Text(
-                                      'Teste de qualidade',
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 14,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  ),
-                                ),
+                              WidgetSearchTextButton(
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                        Colors.grey),
+                                onPressed: () {},
+                                nameButton: 'Teste de qualidade',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                                color: Colors.white,
                               ),
                             ],
                           ),
                         ),
                       ],
                     ),
+
                     SizedBox(
                       width: 20,
                     ),
+
+                    //search
                     Column(
                       children: [
                         Container(
@@ -422,7 +389,7 @@ class _SearchNewState extends State<SearchNew> {
               duration: Duration(milliseconds: 1),
               height: MediaQuery.of(context).size.height / 0.9,
               width: MediaQuery.of(context).size.height / 2.5,
-              child: GesturePri()),
+              child: MainContainer()),
         ),
       ),
     );
@@ -447,7 +414,7 @@ class _SearchNewState extends State<SearchNew> {
                 duration: Duration(milliseconds: 1),
                 height: MediaQuery.of(context).size.height / 0.5,
                 width: MediaQuery.of(context).size.height / 9,
-                child: GestureRec()),
+                child: RetractContainer()),
           ),
         ),
       ),

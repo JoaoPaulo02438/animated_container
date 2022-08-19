@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class GestureRec extends StatelessWidget {
-  GestureRec({Key? key}) : super(key: key);
+class RetractContainer extends StatelessWidget {
+  RetractContainer({Key? key}) : super(key: key);
 
   List<String> images = [
     "images/ibase_de_dados.png",
@@ -48,7 +48,7 @@ class GestureRec extends StatelessWidget {
               CircleAvatar(
                 backgroundColor: Colors.white,
                 backgroundImage: NetworkImage(
-                    'https://www.woolha.com/media/2020/03/eevee.png'),
+                    'https://storage.googleapis.com/production-hostgator-brasil-v1-0-8/168/402168/mIDsiod9/3c6176441f12428f8040b9944a123aef'),
                 radius: 25,
               ),
             ],

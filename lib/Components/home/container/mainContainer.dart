@@ -1,15 +1,21 @@
+import 'package:animated_container/Views/Microservices/inventory/inventory_page.dart';
 import 'package:animated_container/Views/microservices/Journey/journey_page.dart';
 import 'package:animated_container/Views/microservices/Search/search%20_page.dart';
 import 'package:animated_container/Views/microservices/Tasks/tasks_page.dart';
 import 'package:animated_container/widgets/widget_pagina_desenvolvimento.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-class GesturePri extends StatelessWidget {
-  GesturePri({
+class MainContainer extends StatefulWidget {
+  const MainContainer({
     Key? key,
   }) : super(key: key);
 
+  @override
+  State<MainContainer> createState() => _MainContainerState();
+}
+
+class _MainContainerState extends State<MainContainer>
+    with SingleTickerProviderStateMixin {
   List<String> images = [
     "images/base_de_dados.png",
     "images/jornada.png",
@@ -19,6 +25,30 @@ class GesturePri extends StatelessWidget {
     "images/tarefas.png",
     "images/avisos.png",
   ];
+
+  bool select = true;
+  bool isCollapsed = false;
+  //bool _isPlay = false;
+  double maxWidth = 250;
+  double minWidth = 70;
+  late final AnimationController _controller;
+  late final Animation<double> widthAnimation;
+
+  @override
+  void initState() {
+    _controller =
+        AnimationController(duration: const Duration(seconds: 1), vsync: this);
+    widthAnimation =
+        Tween<double>(begin: maxWidth, end: minWidth).animate(_controller);
+    super.initState();
+  }
+
+  // Dispose the controller
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,8 +77,29 @@ class GesturePri extends StatelessWidget {
                 child: CircleAvatar(
                   backgroundColor: Colors.white,
                   backgroundImage: NetworkImage(
-                      'https://www.woolha.com/media/2020/03/eevee.png'),
+                      'https://storage.googleapis.com/production-hostgator-brasil-v1-0-8/168/402168/mIDsiod9/3c6176441f12428f8040b9944a123aef'),
                   radius: 25,
+                ),
+              ),
+              Flexible(
+                child: InkWell(
+                  onTap: () {
+                    isCollapsed = !isCollapsed;
+                    isCollapsed ? _controller.forward() : _controller.reverse();
+                    setState(() {
+                      /*Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => MenuRecolhido()),
+                      );*/
+                    });
+                  },
+                  child: AnimatedIcon(
+                    icon: AnimatedIcons.arrow_menu,
+                    progress: _controller,
+                    size: 25,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ],
@@ -186,8 +237,7 @@ class GesturePri extends StatelessWidget {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => PaginaDesenvolvimento()),
+                    MaterialPageRoute(builder: (context) => InventoryPage()),
                   );
                 },
                 child: Container(
